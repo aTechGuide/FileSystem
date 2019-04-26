@@ -4,11 +4,14 @@ import in.kamranali.filesystem.FileSystemException
 
 
 class File(override val parentPath: String, override val name: String, val contents: String) extends DirEntry(parentPath, name) {
+
   override def asDirectory: Directory = throw new FileSystemException("A file can't be converted into a directory")
+  override def asFile: File = this
 
   override def getType: String = "File"
 
-  override def asFile: File = this
+  override def isDirectory: Boolean = false
+  override def isFile: Boolean = true
 }
 
 object File {
