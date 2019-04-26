@@ -1,5 +1,7 @@
 package in.kamranali.files
 
+import in.kamranali.filesystem.FileSystemException
+
 import scala.annotation.tailrec
 
 class Directory(override val parentPath: String, override val name: String, val contents: List[DirEntry])
@@ -44,6 +46,7 @@ class Directory(override val parentPath: String, override val name: String, val 
 
   def getType: String = "Directory"
 
+  override def asFile: File = throw new FileSystemException("A directory can't be converted to a file")
 }
 
 object Directory {
