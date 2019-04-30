@@ -6,6 +6,7 @@ Emulating a File System in Scala. It supports following Commands
 - **pwd**: Displays present Working Directory
 - **touch**: Creates an empty file
 - **cd**: Change Directory
+- **rm** Delete Directory
 
 ## References
 - [Rock the jvm scala for beginners](https://www.udemy.com/rock-the-jvm-scala-for-beginners/)
